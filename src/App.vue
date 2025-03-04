@@ -18,7 +18,7 @@ import NavigationView from './views/NavigationView.vue'
 <style scoped lang="scss">
 .css-flex-container {
   display: flex;
-  padding: 1rem;
+  padding: 1rem 3rem;
   gap: 1rem;
   color: var(--color-text);
   &__navigation {

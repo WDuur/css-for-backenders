@@ -1,4 +1,5 @@
 import './assets/main.css'
+import '@fontsource/open-sans/300.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
