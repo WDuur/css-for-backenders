@@ -1,47 +1,71 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, computed, onMounted, onUnmounted } from 'vue'
 
-defineProps<{
+const props = defineProps<{
   title: string
   contents: string
   description: string
-  code: string
-  linkPen?: string | null
+  code?: string | null
+  quote?: string | null
+  linkPens?: string[] | null
 }>()
 
 const state = ref('closed')
+const computedLinkPens = computed(() => props.linkPens ?? undefined)
 const openPen = () => {
+  console.log('state  s', state.value)
   if (state.value === 'open') {
     state.value = 'closed'
   } else {
     state.value = 'open'
   }
 }
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.code === 'Enter') {
+    event.preventDefault()
+    openPen()
+  } else {
+    state.value = 'closed'
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
 </script>
 <template>
-  <div class="base-element-block">
+  <div :id="title" class="base-element-block">
     <ul>
       <li>
         <p>
           <strong>{{ title }}</strong
           >: {{ contents }}
         </p>
-        <p>{{ description }}</p>
-        <pre><code class="language-css">{{code}}</code></pre>
-        <span class="demo" v-if="linkPen" @click="openPen()">#demo</span>
-
-        <iframe
-          v-if="state === 'open'"
-          height="300"
-          style="width: 100%"
-          scrolling="no"
-          title="box model"
-          :src="`https://codepen.io/WDuur/embed/${linkPen}?default-tab=result&editable=true&theme-id=dark`"
-          frameborder="no"
-          loading="lazy"
-          allowtransparency="true"
-          allowfullscreen="true"
-        ></iframe>
+        <p v-html="description" />
+        <pre v-if="code"><code class="language-css">{{code}}</code></pre>
+        <p v-if="quote" class="quote" v-html="quote" />
+        <span class="demo" v-if="computedLinkPens" @click="openPen()" @keydown.enter="openPen()"
+          >#demo</span
+        >
+        <div v-if="state === 'open'">
+          <iframe
+            v-for="(linkPen, index) in computedLinkPens"
+            :key="index"
+            height="400"
+            style="width: 100%"
+            scrolling="no"
+            :src="linkPen"
+            frameborder="no"
+            loading="lazy"
+            allowtransparency="true"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
       </li>
     </ul>
   </div>
@@ -49,6 +73,8 @@ const openPen = () => {
 
 <style lang="scss" scoped>
 .base-element-block {
+  min-height: 100vh;
+  padding: 1rem 0;
   ul {
     list-style: none;
     padding: 0;
@@ -61,16 +87,21 @@ const openPen = () => {
       font-size: clamp(1.2rem, 5vw, 1.5rem);
       p {
         margin: 0;
+        padding: 1rem 0;
         color: var(--color-text-secondary);
+        &.quote {
+          font-style: italic;
+        }
+        &.orange {
+          color: yellow;
+        }
       }
       strong {
         font-weight: bold;
-        color: var(--color-text-orange);
         font-size: clamp(1.2rem, 5vw, 2.2rem);
       }
       pre {
         width: clamp(300px, 100%, 900px);
-        overflow-x: scroll;
         padding: 0.5rem 1.5rem;
         background-color: hsla(30.6, 83.2%, 90%, 0.3);
         border-radius: 0.5rem;
@@ -78,6 +109,7 @@ const openPen = () => {
       }
       .demo {
         cursor: pointer;
+        color: var(--color-text-orange);
       }
     }
   }

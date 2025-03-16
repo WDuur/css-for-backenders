@@ -11,14 +11,14 @@ const router = createRouter({
     },
 
     {
-      path: '/box-model',
-      name: 'home',
-      component: LayoutView,
+      path: '/layout',
+      name: 'layout',
+      component: () => import('../views/LayoutView.vue'),
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/LayoutView.vue'),
+      path: '/units',
+      name: 'units',
+      component: () => import('../views/UnitsView.vue'),
     },
   ],
 })

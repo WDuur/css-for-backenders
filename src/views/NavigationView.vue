@@ -1,11 +1,26 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const scrollTo = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+</script>
 <template>
   <nav class="css-navigation">
-    <RouterLink to="/">Layouts</RouterLink>
+    <RouterLink to="/layout">Layouts</RouterLink>
     <ul>
-      <li><RouterLink to="/box-model">Box model</RouterLink></li>
-      <li><RouterLink to="/margin">Margin</RouterLink></li>
-      <li><RouterLink to="/flex">Flex</RouterLink></li>
+      <li><a href="#padding" @click.prevent="scrollTo('padding')">Padding</a></li>
+      <li><a href="#margin" @click.prevent="scrollTo('margin')">Margin</a></li>
+      <li><a href="#flex" @click.prevent="scrollTo('flex')">Flexbox </a></li>
+      <li><a href="#flex" @click.prevent="scrollTo('grid')">Grid </a></li>
+    </ul>
+    <RouterLink to="/units">CSS units</RouterLink>
+    <ul>
+      <li><a href="#padding" @click.prevent="scrollTo('px')">px</a></li>
+      <li><a href="#margin" @click.prevent="scrollTo('em')">em</a></li>
+      <li><a href="#flex" @click.prevent="scrollTo('rem')">rem </a></li>
+      <li><a href="#flex" @click.prevent="scrollTo('vh')">vh </a></li>
     </ul>
   </nav>
 </template>
