@@ -31,6 +31,9 @@
 
   --color-border: var(--vt-c-divider-dark-2);
   --color-border-hover: var(--vt-c-divider-dark-1);
+  --color-tabele: var(--vt-c-white-mute);
+  --color-tabele-header: var(--vt-c-divider-dark-2);
+  --color-tabele-border: var(--vt-c-divider-dark-2);
 
   --color-heading: var(--vt-c-text-dark-1);
   --color-text: var(--vt-c-white-mute);

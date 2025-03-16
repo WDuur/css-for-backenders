@@ -26,6 +26,12 @@ const scrollTo = (id: string) => {
           >Viewport-gebaseerde eenheden
         </a>
       </li>
+      <li>
+        <a href="#" @click.prevent="scrollTo('Flexibele eenheden')">Flexibele eenheden </a>
+      </li>
+      <li>
+        <a href="#" @click.prevent="scrollTo('Welke eenheid')">Welke eenheden</a>
+      </li>
     </ul>
   </nav>
 </template>
