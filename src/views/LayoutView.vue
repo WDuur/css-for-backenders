@@ -2,52 +2,54 @@
 import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 
+import PaddingLayout from '@/chapters/layout/paddingLayout.vue'
+import PaddingLayoutCode from '@/chapters/layout/paddingLayoutCode.vue'
+import MarginLayout from '@/chapters/layout/marginLayout.vue'
+import MarginLayoutCode from '@/chapters/layout/marginLayoutCode.vue'
+import MarginLayoutQuote from '@/chapters/layout/marginLayoutQuote.vue'
+import FlexLayout from '@/chapters/layout/flexLayout.vue'
+import FlexLayoutCode from '@/chapters/layout/flexLayoutCode.vue'
+
 const {} = useAnchorNavigation(['title', 'padding', 'margin', 'flex'])
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">Belangrijke elementen voor een goede html layout</h1>
+
+    <!----- PaddingLayout -->
     <BaseElementBlock
       title="padding"
-      contents="bepaalt de binnenruimte tussen de inhoud van een element en de rand ervan."
-      description="Met de padding-eigenschap kun je ruimte toevoegen binnen een element, waardoor de inhoud niet direct tegen de rand aan staat. Je kunt afzonderlijke waarden instellen voor boven, rechts, onder en links of één enkele waarde voor alle zijden."
-      code="element {
-  padding: 10px; /* Gelijktijdig voor alle zijden */
-  padding: 10px 20px; /* 10px boven/onder, 20px links/rechts */
-  padding: 10px 15px 5px 20px; /* Specifiek per zijde: top, rechts, onder, links */
-}"
+      subtitle="bepaalt de binnenruimte tussen de inhoud van een element en de rand ervan."
       :linkPens="[
         'https://codepen.io/WDuur/embed/gOyxYLp?default-tab=result&editable=true&theme-id=dark',
       ]"
-    />
+    >
+      <template #description><PaddingLayout /></template>
+      <template #code><PaddingLayoutCode /></template>
+    </BaseElementBlock>
 
+    <!----- MarginLayout -->
     <BaseElementBlock
       title="margin"
-      contents="bepaalt de ruimte buiten de rand van een element."
-      description="Met de margin-eigenschap kun je de ruimte rondom een element instellen, zodat het niet direct tegen andere elementen aanstaat. Net als bij padding kun je afzonderlijke waarden instellen voor boven, rechts, onder en links of één enkele waarde voor alle zijden."
-      quote="Het gebruik van margin lijkt eenvoudig, en dat is het ook. Maar bij herbruikbare componenten kan het een uitdaging zijn om een consistente layout te behouden. Daarom is het beter om de parent te laten bepalen hoeveel ruimte er tussen zichzelf en het child component zit. Dit zorgt voor een flexibeler en beter beheersbaar ontwerp."
-      code="element {
-  margin: 10px; /* Gelijktijdig voor alle zijden */
-  margin: 10px 20px; /* 10px boven/onder, 20px links/rechts */
-  margin: 10px 15px 5px 20px; /* Specifiek per zijde: top, rechts, onder, links */
-  margin: auto; /* Centraal uitlijnen (horizontaal, bij block-elementen) */
-}"
+      subtitle="bepaalt de ruimte buiten de rand van een element."
       :linkPens="[
         'https://codepen.io/WDuur/embed/WbNdjbg?default-tab=result&editable=true&theme-id=dark',
         'https://codepen.io/WDuur/embed/zxYpwqG?default-tab=result&editable=true&theme-id=dark',
       ]"
-    />
+    >
+      <template #description><MarginLayout /></template>
+      <template #code><MarginLayoutCode /></template>
+      <template #quote><MarginLayoutQuote /></template>
+    </BaseElementBlock>
+
+    <!----- FlexLayout -->
     <BaseElementBlock
       title="flex"
-      contents="bepaalt de ruimte buiten de rand van een element."
-      description="Met de margin-eigenschap kun je de ruimte rondom een element instellen, zodat het niet direct tegen andere elementen aanstaat. Net als bij padding kun je afzonderlijke waarden instellen voor boven, rechts, onder en links of één enkele waarde voor alle zijden."
-      code="element {
-  margin: 10px; /* Gelijktijdig voor alle zijden */
-  margin: 10px 20px; /* 10px boven/onder, 20px links/rechts */
-  margin: 10px 15px 5px 20px; /* Specifiek per zijde: top, rechts, onder, links */
-  margin: auto; /* Centraal uitlijnen (horizontaal, bij block-elementen) */
-}"
-    />
+      subtitle="bepaalt de ruimte buiten de rand van een element.(todo)"
+    >
+      <template #description><FlexLayout /></template>
+      <template #code><FlexLayoutCode /></template>
+    </BaseElementBlock>
   </div>
 </template>
 

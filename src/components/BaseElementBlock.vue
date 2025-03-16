@@ -3,8 +3,9 @@ import { defineProps, ref, computed, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps<{
   title: string
-  contents: string
-  description: string
+  subtitle?: string
+  contents?: string
+  description?: string | null
   code?: string | null
   quote?: string | null
   linkPens?: string[] | null
@@ -44,10 +45,12 @@ onUnmounted(() => {
       <li>
         <p>
           <strong>{{ title }}</strong
-          >: {{ contents }}
+          >: {{ subtitle || contents }}
         </p>
         <p v-html="description" />
-        <pre v-if="code"><code class="language-css">{{code}}</code></pre>
+        <slot name="description"></slot>
+        <slot name="code"></slot>
+        <slot name="quote" class="quote"></slot>
         <p v-if="quote" class="quote" v-html="quote" />
         <span class="demo" v-if="computedLinkPens" @click="openPen()" @keydown.enter="openPen()"
           >#demo</span
@@ -100,9 +103,9 @@ onUnmounted(() => {
         font-weight: bold;
         font-size: clamp(1.2rem, 5vw, 2.2rem);
       }
-      pre {
+      &:deep(pre) {
         width: clamp(300px, 60vw, 900px);
-        padding: 0.5rem 1.5rem;
+        padding: 0 1.5rem;
         background-color: hsla(30.6, 83.2%, 90%, 0.3);
         border-radius: 0.5rem;
         font-size: clamp(0.2rem, 100%, 1rem);
