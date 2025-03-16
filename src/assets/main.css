@@ -21,3 +21,22 @@ a {
     }
   }
 }
+strong {
+  color: var(--color-text-orange);
+}
+img {
+  border-radius: 1rem;
+  max-width: 60vw;
+  box-shadow: 20px 20px 50px var(--vt-c-black-dark);
+  margin-top: 2rem;
+}
+
+nav {
+  color: var(--color-text);
+  font-size: clamp(0.8rem, 5vw, 1.2rem);
+  .css-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

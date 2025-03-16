@@ -12,15 +12,20 @@ const scrollTo = (id: string) => {
     <ul>
       <li><a href="#padding" @click.prevent="scrollTo('padding')">Padding</a></li>
       <li><a href="#margin" @click.prevent="scrollTo('margin')">Margin</a></li>
-      <li><a href="#flex" @click.prevent="scrollTo('flex')">Flexbox </a></li>
-      <li><a href="#flex" @click.prevent="scrollTo('grid')">Grid </a></li>
     </ul>
     <RouterLink to="/units">CSS units</RouterLink>
     <ul>
-      <li><a href="#padding" @click.prevent="scrollTo('px')">px</a></li>
-      <li><a href="#margin" @click.prevent="scrollTo('em')">em</a></li>
-      <li><a href="#flex" @click.prevent="scrollTo('rem')">rem </a></li>
-      <li><a href="#flex" @click.prevent="scrollTo('vh')">vh </a></li>
+      <li><a href="#" @click.prevent="scrollTo('px')">px</a></li>
+      <li>
+        <a href="#" @click.prevent="scrollTo('Tekstgebaseerde eenheden')"
+          >Tekstgebaseerde eenheden</a
+        >
+      </li>
+      <li>
+        <a href="#" @click.prevent="scrollTo('Viewport-gebaseerde eenheden')"
+          >Viewport-gebaseerde eenheden
+        </a>
+      </li>
     </ul>
   </nav>
 </template>
@@ -28,11 +33,12 @@ const scrollTo = (id: string) => {
 <style lang="scss" scoped>
 nav {
   color: var(--color-text);
-  font-size: clamp(0.8rem, 5vw, 1.2rem);
-  .css-navigation {
+  font-size: clamp(0.8rem, 5vw, 2.2rem);
+  li {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    font-size: clamp(0.8rem, 5vw, 1.2rem);
   }
 }
 </style>

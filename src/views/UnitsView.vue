@@ -48,7 +48,7 @@ const {} = useAnchorNavigation([
     <BaseElementBlock
       title="Tekstgebaseerde eenheden"
       contents="Een tekstgebaseerde eenheid in CSS is een maat die afhankelijk is van de lettergrootte."
-      description="<ul>
+      description='<ul>
   <li>
     <strong>em</strong> – Relatief ten opzichte van de <code>font-size</code> van het parent-element.
     <ul>
@@ -65,24 +65,15 @@ const {} = useAnchorNavigation([
     </ul>
   </li>
 
-  <li>
-    <strong>ex</strong> – Relatief aan de hoogte van de kleine letter 'x' van het huidige lettertype.
-  </li>
 
-  <li>
-    <strong>ch</strong> – Relatief aan de breedte van het cijfer '0' in het huidige lettertype.
-    <ul>
-      <li>Handig voor: het instellen van maximale tekstbreedte in karakters.</li>
-    </ul>
-  </li>
-</ul>"
-      quote="Het gebruik van margin lijkt eenvoudig, en dat is het ook. Maar bij herbruikbare componenten kan het een uitdaging zijn om een consistente layout te behouden. Daarom is het beter om de parent te laten bepalen hoeveel ruimte er tussen zichzelf en het child component zit. Dit zorgt voor een flexibeler en beter beheersbaar ontwerp."
+</ul>
+<image src="/images/css-unit-em-rem.png"  width="100%" height="auto" >'
       code=""
     />
     <BaseElementBlock
       title="Viewport-gebaseerde eenheden"
       contents="bepaalt de ruimte buiten de rand van een element."
-      description="<ul>
+      description='<ul>
   <li>
     <strong>vw (viewport width)</strong> – Percentage van de breedte van de viewport.
     <ul>
@@ -105,15 +96,15 @@ const {} = useAnchorNavigation([
     <strong>vmax</strong> – Gebaseerd op het grootste van vw of vh.
   </li>
 
-  <li>
-    <ul>
-      <li>
-        Handig voor: responsieve layouts zonder media queries!
-      </li>
-    </ul>
+  <li><strong>svh</strong>: weerspiegelt de kleinste zichtbare viewporthoogte, exclusief interface-elementen van de user agent.</li>
+  <li><strong>lvh</strong>: weerspiegelt de grootst mogelijke zichtbare viewporthoogte.</li>
+  <li><strong>dvh</strong>: weerspiegelt de huidige viewporthoogte zonder de interface van de user agent en past zich aan bij veranderingen.</li>
+
+  <li>Daarnaast is er natuuurlijk ook nog:
+     <strong>svw</strong>, <strong>lvw</strong> en <strong>dvw</strong>
   </li>
-</ul>
-"
+  <image src="/images/viewport-units-svh-lvh-dvh-svw-lvw-dvw.png"  width="100%" height="auto" >
+</ul>'
     />
   </div>
 </template>
