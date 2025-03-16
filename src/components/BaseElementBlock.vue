@@ -101,11 +101,12 @@ onUnmounted(() => {
         font-size: clamp(1.2rem, 5vw, 2.2rem);
       }
       pre {
-        width: clamp(300px, 100%, 900px);
+        width: clamp(300px, 60vw, 900px);
         padding: 0.5rem 1.5rem;
         background-color: hsla(30.6, 83.2%, 90%, 0.3);
         border-radius: 0.5rem;
-        font-size: 1rem;
+        font-size: clamp(0.2rem, 100%, 1rem);
+        overflow: hidden;
       }
       .demo {
         cursor: pointer;

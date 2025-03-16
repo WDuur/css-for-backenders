@@ -18,14 +18,20 @@ import NavigationView from './views/NavigationView.vue'
 <style scoped lang="scss">
 .css-flex-container {
   display: flex;
+  flex-direction: column;
+  flex-direction: column-reverse;
   padding: 1rem 3rem;
   gap: 1rem;
   color: var(--color-text);
-  &__navigation {
-    min-width: 300px;
-  }
+
   &__content {
     flex: 1;
+  }
+  @media (min-width: 768px) {
+    flex-direction: row;
+    &__navigation {
+      min-width: 300px;
+    }
   }
 }
 </style>
