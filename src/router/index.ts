@@ -20,6 +20,16 @@ const router = createRouter({
       name: 'units',
       component: () => import('../views/UnitsView.vue'),
     },
+    {
+      path: '/variables',
+      name: 'variables',
+      component: () => import('../views/VariablesView.vue'),
+    },
+    {
+      path: '/preprocessors',
+      name: 'preprocessors',
+      component: () => import('../views/PreprocessorView.vue'),
+    },
   ],
 })
 

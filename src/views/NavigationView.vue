@@ -33,6 +33,11 @@ const scrollTo = (id: string) => {
         <a href="#" @click.prevent="scrollTo('Welke eenheid')">Welke eenheden</a>
       </li>
     </ul>
+    <RouterLink to="/variables">CSS variabelen</RouterLink>
+    <ul>
+      <li><a href="#padding" @click.prevent="scrollTo('Tailwind')">Tailwind</a></li>
+    </ul>
+    <RouterLink to="/preprocessors">CSS preprocessors</RouterLink>
   </nav>
 </template>
 

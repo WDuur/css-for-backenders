@@ -1,0 +1,35 @@
+<script setup lang="ts">
+import BaseElementBlock from '@/components/BaseElementBlock.vue'
+import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
+
+import ScssPreprocessors from '@/chapters/preprocessors/scssPreprocessors.vue'
+import ScssPreprocessorsCode from '@/chapters/preprocessors/scssPreprocessorsCode.vue'
+import ScssPreprocessorsQuote from '@/chapters/preprocessors/scssPreprocessorsQuote.vue'
+
+const {} = useAnchorNavigation([
+  'title', // title do not remove
+  'SCSS',
+])
+</script>
+<template>
+  <div class="css-layout css-base-element-blocks">
+    <h1 id="title">CSS variabelen: maak je css dynamisch en makelijker</h1>
+
+    <!----- SCSS -->
+    <BaseElementBlock
+      title="SCSS"
+      subtitle="een uitbreidingssyntaxis van CSS met variabelen, nesting en mixins voor gestructureerde styling."
+    >
+      <template #description><ScssPreprocessors /></template>
+      <template #quote><ScssPreprocessorsCode /></template>
+      <template #code><ScssPreprocessorsQuote /></template>
+    </BaseElementBlock>
+
+    <!----- LESS -->
+    <BaseElementBlock
+      title="LESS"
+      subtitle="Een CSS-preprocessor met variabelen en functies voor herbruikbare en dynamische stijlen."
+    >
+    </BaseElementBlock>
+  </div>
+</template>
