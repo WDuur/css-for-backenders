@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 
-const {} = useAnchorNavigation([
+const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
   'Tailwind',
 ])
+onMounted(() => {
+  scrollTo('title')
+})
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">

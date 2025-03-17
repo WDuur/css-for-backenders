@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 
@@ -10,7 +11,11 @@ import MarginLayoutQuote from '@/chapters/layout/marginLayoutQuote.vue'
 import FlexLayout from '@/chapters/layout/flexLayout.vue'
 import FlexLayoutCode from '@/chapters/layout/flexLayoutCode.vue'
 
-const {} = useAnchorNavigation(['title', 'padding', 'margin', 'flex'])
+const { scrollTo } = useAnchorNavigation(['title', 'padding', 'margin', 'flex'])
+
+onMounted(() => {
+  scrollTo('title')
+})
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">

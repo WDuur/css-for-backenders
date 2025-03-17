@@ -38,18 +38,32 @@ const scrollTo = (id: string) => {
       <li><a href="#padding" @click.prevent="scrollTo('Tailwind')">Tailwind</a></li>
     </ul>
     <RouterLink to="/preprocessors">CSS preprocessors</RouterLink>
+    <ul>
+      <li><a href="#padding" @click.prevent="scrollTo('SCSS')">SCSS</a></li>
+      <li><a href="#padding" @click.prevent="scrollTo('LESS')">LESS</a></li>
+    </ul>
   </nav>
 </template>
 
 <style lang="scss" scoped>
 nav {
+  position: fixed;
+  width: 400px;
+  left: -300px;
+  padding-left: 20px;
+  transition: left 1s ease-in-out;
   color: var(--color-text);
-  font-size: clamp(0.8rem, 5vw, 2.2rem);
+  font-size: clamp(0.8rem, 5vw, 1.6rem);
   li {
     display: flex;
     flex-direction: column;
+    width: fit-content;
     gap: 1rem;
-    font-size: clamp(0.8rem, 5vw, 1.2rem);
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    opacity: 0.6;
+  }
+  &:hover {
+    left: 0;
   }
 }
 </style>

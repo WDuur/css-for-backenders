@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 
@@ -6,10 +7,14 @@ import ScssPreprocessors from '@/chapters/preprocessors/scssPreprocessors.vue'
 import ScssPreprocessorsCode from '@/chapters/preprocessors/scssPreprocessorsCode.vue'
 import ScssPreprocessorsQuote from '@/chapters/preprocessors/scssPreprocessorsQuote.vue'
 
-const {} = useAnchorNavigation([
+const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
   'SCSS',
+  'Less',
 ])
+onMounted(() => {
+  scrollTo('title')
+})
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">

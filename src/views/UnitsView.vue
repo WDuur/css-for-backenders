@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 
@@ -10,7 +11,7 @@ import ViewportUnits from '@/chapters/units/viewportUnits.vue'
 import FlexUnits from '@/chapters/units/flexUnits.vue'
 import WitchUnits from '@/chapters/units/witchUnits.vue'
 
-const {} = useAnchorNavigation([
+const { scrollTo } = useAnchorNavigation([
   'title',
   'subtitle1',
   'px',
@@ -20,6 +21,9 @@ const {} = useAnchorNavigation([
   'Flexibele eenheden',
   'Welke eenheid',
 ])
+onMounted(() => {
+  scrollTo('title')
+})
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">
