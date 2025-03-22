@@ -10,6 +10,8 @@ import MarginLayoutCode from '@/chapters/layout/marginLayoutCode.vue'
 import MarginLayoutQuote from '@/chapters/layout/marginLayoutQuote.vue'
 import FlexLayout from '@/chapters/layout/flexLayout.vue'
 import FlexLayoutCode from '@/chapters/layout/flexLayoutCode.vue'
+import { useChapterNavigation } from '@/composables/useChapterNavigation'
+const {} = useChapterNavigation('important', 'units')
 
 const { scrollTo } = useAnchorNavigation(['title', 'padding', 'margin', 'flex'])
 

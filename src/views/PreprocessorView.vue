@@ -6,6 +6,8 @@ import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import ScssPreprocessors from '@/chapters/preprocessors/scssPreprocessors.vue'
 import ScssPreprocessorsCode from '@/chapters/preprocessors/scssPreprocessorsCode.vue'
 import ScssPreprocessorsQuote from '@/chapters/preprocessors/scssPreprocessorsQuote.vue'
+import { useChapterNavigation } from '@/composables/useChapterNavigation'
+const {} = useChapterNavigation('variables', '')
 
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove

@@ -10,6 +10,8 @@ import TextUnits from '@/chapters/units/textUnits.vue'
 import ViewportUnits from '@/chapters/units/viewportUnits.vue'
 import FlexUnits from '@/chapters/units/flexUnits.vue'
 import WitchUnits from '@/chapters/units/witchUnits.vue'
+import { useChapterNavigation } from '@/composables/useChapterNavigation'
+const {} = useChapterNavigation('layout', 'variables')
 
 const { scrollTo } = useAnchorNavigation([
   'title',

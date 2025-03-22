@@ -2,26 +2,23 @@
 import { onMounted } from 'vue'
 import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
+import Important from '@/chapters/important/importantImportant.vue'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('units', 'preprocessors')
 
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
-  'Tailwind',
+  'important',
 ])
 onMounted(() => {
   scrollTo('title')
 })
+const {} = useChapterNavigation('', 'layout')
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">
-    <h1 id="title">CSS variabelen: maak je css dynamisch en makelijker</h1>
-
-    <!----- Tailwind -->
-    <BaseElementBlock
-      title="Tailwind"
-      subtitle="een utility-first CSS-framework voor snelle en flexibele styling."
-    >
+    <!----- Important -->
+    <BaseElementBlock title="Important">
+      <template #description><Important /></template>
     </BaseElementBlock>
   </div>
 </template>

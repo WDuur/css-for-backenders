@@ -8,6 +8,10 @@ const scrollTo = (id: string) => {
 </script>
 <template>
   <nav class="css-navigation">
+    <RouterLink to="/">Start!</RouterLink>
+    <br />
+    <RouterLink to="/important">Important!</RouterLink>
+    <br />
     <RouterLink to="/layout">Layouts</RouterLink>
     <ul>
       <li><a href="#padding" @click.prevent="scrollTo('padding')">Padding</a></li>
@@ -51,7 +55,7 @@ nav {
   width: 400px;
   left: -300px;
   padding-left: 20px;
-  transition: left 1s ease-in-out;
+  transition: left 0.5s ease-in-out;
   color: var(--color-text);
   font-size: clamp(0.8rem, 5vw, 1.6rem);
   li {

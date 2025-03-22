@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LayoutView from '../views/LayoutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,9 +6,13 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: LayoutView,
+      component: () => import('../views/startView.vue'),
     },
-
+    {
+      path: '/important',
+      name: 'important',
+      component: () => import('../views/ImportantView.vue'),
+    },
     {
       path: '/layout',
       name: 'layout',

@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('units', 'preprocessors')
+const {} = useChapterNavigation('', 'important')
 
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
-  'Tailwind',
+  'important',
 ])
 onMounted(() => {
   scrollTo('title')
@@ -15,13 +14,22 @@ onMounted(() => {
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">
-    <h1 id="title">CSS variabelen: maak je css dynamisch en makelijker</h1>
-
-    <!----- Tailwind -->
-    <BaseElementBlock
-      title="Tailwind"
-      subtitle="een utility-first CSS-framework voor snelle en flexibele styling."
-    >
-    </BaseElementBlock>
+    <h1 id="title">CSS FOR BACKENDERS <sub>- powerd by Pieter & Wietze -</sub></h1>
   </div>
 </template>
+
+<style scoped lang="scss">
+.css-layout {
+  width: 50vw;
+  h1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    & sub {
+      font-size: 1rem;
+    }
+  }
+}
+</style>
