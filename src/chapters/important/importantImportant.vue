@@ -1,8 +1,9 @@
 <template>
   <div>
-    Je gebruikt <strong>!important</strong> in CSS alleen wanneer het echt nodig is om een
-    stijlregel prioriteit te geven boven alle andere, inclusief inline-stijlen en specifiekere
-    selectors. Dit kan bijvoorbeeld nuttig zijn:
+    <div class="image">
+      <image src="/images/important.webp" />
+    </div>
+
     <ul>
       <li>
         Als laatste redmiddel wanneer je geen controle hebt over de originele CSS. Maar: gebruik het
@@ -12,11 +13,6 @@
         Bij het overschrijven van externe stylesheets (zoals van een bibliotheek of framework).
       </li>
     </ul>
-    omdat het debuggen en onderhouden van je CSS moeilijker maakt. Het is beter om de specificiteit
-    van je selectors te verhogen of je CSS-structuur te verbeteren.
-  </div>
-  <div class="image">
-    <image src="/images/important.webp" />
   </div>
 </template>
 

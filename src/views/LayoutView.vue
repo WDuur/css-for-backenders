@@ -10,10 +10,25 @@ import MarginLayoutCode from '@/chapters/layout/marginLayoutCode.vue'
 import MarginLayoutQuote from '@/chapters/layout/marginLayoutQuote.vue'
 import FlexLayout from '@/chapters/layout/flexLayout.vue'
 import FlexLayoutCode from '@/chapters/layout/flexLayoutCode.vue'
+import FlexOptionsLayoutCode from '@/chapters/layout/flexOptionsLayoutCode.vue'
+import FlexToolsLayout from '@/chapters/layout/flexToolsLayout.vue'
+import GridLayout from '@/chapters/layout/gridLayout.vue'
+import GridLayoutCode from '@/chapters/layout/gridLayoutCode.vue'
+import GridNamedLayout from '@/chapters/layout/gridNamedLayout.vue'
+import GridNamedLayoutCode from '@/chapters/layout/gridNamedLayoutCode.vue'
+
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
 const {} = useChapterNavigation('important', 'units')
 
-const { scrollTo } = useAnchorNavigation(['title', 'padding', 'margin', 'flex'])
+const { scrollTo } = useAnchorNavigation([
+  'title',
+  'Padding',
+  'Margin',
+  'Flexbox',
+  'Flexbox opties',
+  'Flexbox tools',
+  'Grid',
+])
 
 onMounted(() => {
   scrollTo('title')
@@ -25,7 +40,7 @@ onMounted(() => {
 
     <!----- PaddingLayout -->
     <BaseElementBlock
-      title="padding"
+      title="Padding"
       subtitle="bepaalt de binnenruimte tussen de inhoud van een element en de rand ervan."
       :linkPens="[
         'https://codepen.io/WDuur/embed/gOyxYLp?default-tab=result&editable=true&theme-id=dark',
@@ -37,7 +52,7 @@ onMounted(() => {
 
     <!----- MarginLayout -->
     <BaseElementBlock
-      title="margin"
+      title="Margin"
       subtitle="bepaalt de ruimte buiten de rand van een element."
       :linkPens="[
         'https://codepen.io/WDuur/embed/WbNdjbg?default-tab=result&editable=true&theme-id=dark',
@@ -51,11 +66,47 @@ onMounted(() => {
 
     <!----- FlexLayout -->
     <BaseElementBlock
-      title="flex"
-      subtitle="bepaalt de ruimte buiten de rand van een element.(todo)"
+      title="Flexbox"
+      subtitle="is ideaal voor eenvoudige en dynamische lay-outs!"
+      :linkPens="[
+        'https://codepen.io/WDuur/embed/VYwBRPv?default-tab=result&editable=true&theme-id=dark',
+      ]"
     >
       <template #description><FlexLayout /></template>
       <template #code><FlexLayoutCode /></template>
+    </BaseElementBlock>
+    <!----- FlexLayout options -->
+    <BaseElementBlock title="Flexbox opties">
+      <template #code><FlexOptionsLayoutCode /></template>
+
+      <!----- FlexLayout tools -->
+    </BaseElementBlock>
+    <BaseElementBlock title="Flexbox tools" subtitle="de gemakkelijke manier">
+      <template #description><FlexToolsLayout /></template>
+    </BaseElementBlock>
+
+    <!----- GridLayout -->
+    <BaseElementBlock
+      title="Grid"
+      subtitle="is ideaal voor eenvoudige en dynamische lay-outs!"
+      :linkPens="[
+        'https://codepen.io/WDuur/embed/yyLqdyK?default-tab=result&editable=true&theme-id=dark',
+      ]"
+    >
+      <template #description><GridLayout /></template>
+      <template #code><GridLayoutCode /></template>
+    </BaseElementBlock>
+
+    <!----- GridNamedLayout -->
+    <BaseElementBlock
+      title="Named Grid"
+      subtitle=""
+      :linkPens="[
+        'https://codepen.io/WDuur/embed/NPWBZba?default-tab=result&editable=false&theme-id=dark',
+      ]"
+    >
+      <template #description><GridNamedLayout /></template>
+      <template #code><GridNamedLayoutCode /></template>
     </BaseElementBlock>
   </div>
 </template>
