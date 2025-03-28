@@ -106,7 +106,7 @@ onUnmounted(() => {
       &:deep(pre) {
         width: clamp(300px, 60vw, 900px);
         padding: 0 1.5rem;
-        background-color: hsla(30.6, 83.2%, 90%, 0.3);
+        background-color: hsl(0, 0%, 9.4%);
         border-radius: 0.5rem;
         font-size: clamp(0.2rem, 100%, 1rem);
         overflow: hidden;

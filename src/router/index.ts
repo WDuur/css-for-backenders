@@ -33,6 +33,11 @@ const router = createRouter({
       name: 'preprocessors',
       component: () => import('../views/PreprocessorView.vue'),
     },
+    {
+      path: '/architectuur',
+      name: 'architectuur',
+      component: () => import('../views/ArchitectuurView.vue'),
+    },
   ],
 })
 
