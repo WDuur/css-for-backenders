@@ -11,6 +11,7 @@
   --vt-c-black-dark: #000000;
 
   --vt-c-orange: rgb(244, 123, 32);
+  --vt-c-orange-light: rgba(244, 123, 32, 0.5);
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);

@@ -7,7 +7,7 @@ import ScssPreprocessors from '@/chapters/preprocessors/scssPreprocessors.vue'
 import ScssPreprocessorsCode from '@/chapters/preprocessors/scssPreprocessorsCode.vue'
 import ScssPreprocessorsQuote from '@/chapters/preprocessors/scssPreprocessorsQuote.vue'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('variables', '')
+const {} = useChapterNavigation('variables', 'architectuur')
 
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">
-    <h1 id="title">CSS variabelen: maak je css dynamisch en makelijker</h1>
+    <h1 id="title">CSS preprocessors</h1>
 
     <!----- SCSS -->
     <BaseElementBlock

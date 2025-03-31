@@ -46,6 +46,12 @@ const scrollTo = (id: string) => {
       <li><a href="#padding" @click.prevent="scrollTo('SCSS')">SCSS</a></li>
       <li><a href="#padding" @click.prevent="scrollTo('LESS')">LESS</a></li>
     </ul>
+    <RouterLink to="/architectuur">Architectuur</RouterLink>
+    <ul>
+      <li><a href="#padding" @click.prevent="scrollTo('BEM')">BEM</a></li>
+      <li><a href="#padding" @click.prevent="scrollTo('OOCSS')">OOCSS</a></li>
+      <li><a href="#padding" @click.prevent="scrollTo('SMACSS')">SMACSS</a></li>
+    </ul>
   </nav>
 </template>
 

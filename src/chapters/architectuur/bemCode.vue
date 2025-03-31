@@ -1,7 +1,7 @@
 ﻿<template>
-      <highlightjs
-        language="css"
-        code="
+  <highlightjs
+    language="css"
+    code="
 .card {
   border: 1px solid #ccc;
   padding: 20px;
@@ -39,6 +39,5 @@
   background-color: gray;
   color: white;
 }"
-      />
+  />
 </template>
-<script setup lang="ts"></script>

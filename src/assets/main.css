@@ -81,3 +81,11 @@ footer {
   content: ']';
   margin-left: 0.2rem;
 }
+pre code.hljs {
+  border-radius: 1rem;
+  border: 1px solid var(--vt-c-orange-light);
+}
+:deep(pre code.hljs) {
+  border-radius: 1rem;
+  border: 1px solid var(--vt-c-orange-light);
+}

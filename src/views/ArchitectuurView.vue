@@ -9,18 +9,18 @@ import Smacss from '@/chapters/architectuur/smacss.vue'
 import BemCode from '@/chapters/architectuur/bemCode.vue'
 import OocssCode from '@/chapters/architectuur/oocssCode.vue'
 import SmacssCode from '@/chapters/architectuur/smacssCode.vue'
-const {} = useChapterNavigation('layout', 'variables')
-const { scrollTo } = useAnchorNavigation([
-  'title',
-])
+const {} = useChapterNavigation('preprocessors', 'debugging')
+const { scrollTo } = useAnchorNavigation(['title', 'subtitle1', 'BEM', 'OOCSS', 'SMACSS'])
 onMounted(() => {
   scrollTo('title')
 })
-
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">
-    <h1 id="title">Hoe kan je je CSS file inrichten om je styling modulair, geincapsuleert en Seperation of concerns </h1>
+    <h1 id="title">
+      Hoe kan je je CSS file inrichten om je styling modulair, geincapsuleert en Seperation of
+      concerns
+    </h1>
     <h2 id="subtitle1">
       <p>Voor CSS zijn er 3 bekende architecturen waarvan gebruik gemaakt kan worden:</p>
     </h2>
@@ -48,6 +48,5 @@ onMounted(() => {
       <template #description><smacss /></template>
       <template #code><smacss-code /></template>
     </BaseElementBlock>
-
   </div>
 </template>
