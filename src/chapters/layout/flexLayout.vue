@@ -1,14 +1,10 @@
 <template>
   <div>
-    CSS Flexbox (flexible box layout) is een lay-outmodel dat wordt gebruikt om elementen binnen een
-    container op een flexibele en efficiënte manier te rangschikken. Het biedt opties voor:
+    De CSS-eigenschap flex is een shorthand voor drie eigenschappen binnen een flex-container:
   </div>
   <ul>
-    <li>
-      <strong>Uitlijnen:</strong> Horizontaal en/of verticaal binnen de container. Verdelen van
-      ruimte: Gelijke of
-    </li>
-    <li><strong>Verdelen van ruimte:</strong> Gelijke of proportionele ruimte tussen items.</li>
-    <li><strong>Responsive design:</strong> Past automatisch aan op de beschikbare ruimte.</li>
+    <li><strong>flex-grow</strong> (hoeveel de flex-item mag groeien)</li>
+    <li><strong>flex-shrink</strong> (hoeveel de flex-item mag krimpen)</li>
+    <li><strong>flex-basis</strong> (de initiële grootte van het flex-item)</li>
   </ul>
 </template>

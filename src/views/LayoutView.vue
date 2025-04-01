@@ -10,8 +10,10 @@ import MarginLayoutCode from '@/chapters/layout/marginLayoutCode.vue'
 import MarginLayoutQuote from '@/chapters/layout/marginLayoutQuote.vue'
 import FlexLayout from '@/chapters/layout/flexLayout.vue'
 import FlexLayoutCode from '@/chapters/layout/flexLayoutCode.vue'
-import FlexOptionsLayoutCode from '@/chapters/layout/flexOptionsLayoutCode.vue'
-import FlexToolsLayout from '@/chapters/layout/flexToolsLayout.vue'
+import FlexBoxLayout from '@/chapters/layout/flexBoxLayout.vue'
+import FlexBoxLayoutCode from '@/chapters/layout/flexBoxLayoutCode.vue'
+import FlexBoxOptionsLayoutCode from '@/chapters/layout/flexBoxOptionsLayoutCode.vue'
+import FlexBoxToolsLayout from '@/chapters/layout/flexBoxToolsLayout.vue'
 import GridLayout from '@/chapters/layout/gridLayout.vue'
 import GridLayoutCode from '@/chapters/layout/gridLayoutCode.vue'
 import GridNamedLayout from '@/chapters/layout/gridNamedLayout.vue'
@@ -24,10 +26,12 @@ const { scrollTo } = useAnchorNavigation([
   'title',
   'Padding',
   'Margin',
+  'Flex',
   'Flexbox',
   'Flexbox opties',
   'Flexbox tools',
   'Grid',
+  'Named Grid',	
 ])
 
 onMounted(() => {
@@ -66,23 +70,32 @@ onMounted(() => {
 
     <!----- FlexLayout -->
     <BaseElementBlock
+      title="Flex"
+      subtitle="Maak moeiteloos flexibele en responsieve lay-outs!">
+      <template #description><FlexLayout /></template>
+      <template #code><FlexLayoutCode /></template>
+    </BaseElementBlock>
+
+    <!----- FlexBoxLayout -->
+    <BaseElementBlock
       title="Flexbox"
       subtitle="is ideaal voor eenvoudige en dynamische lay-outs!"
       :linkPens="[
         'https://codepen.io/WDuur/embed/VYwBRPv?default-tab=result&editable=true&theme-id=dark',
       ]"
     >
-      <template #description><FlexLayout /></template>
-      <template #code><FlexLayoutCode /></template>
+      <template #description><FlexBoxLayout /></template>
+      <template #code><FlexBoxLayoutCode /></template>
     </BaseElementBlock>
+  
     <!----- FlexLayout options -->
     <BaseElementBlock title="Flexbox opties">
-      <template #code><FlexOptionsLayoutCode /></template>
+      <template #code><FlexBoxOptionsLayoutCode /></template>
 
       <!----- FlexLayout tools -->
     </BaseElementBlock>
     <BaseElementBlock title="Flexbox tools" subtitle="de gemakkelijke manier">
-      <template #description><FlexToolsLayout /></template>
+      <template #description><FlexBoxToolsLayout /></template>
     </BaseElementBlock>
 
     <!----- GridLayout -->

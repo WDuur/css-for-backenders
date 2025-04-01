@@ -1,10 +1,11 @@
 <template>
   <highlightjs
     language="css"
-    code=".container {
-  display: flex; /* Activeer Flexbox */
-  justify-content: space-around; /* Verdeel ruimte horizontaal */
-  align-items: center; /* Centreer items verticaal */
+    code=".item {
+  flex: 1 1 auto;
+}
+.item:first-child {
+  flex: 2 1 auto;
 }"
   />
 </template>
