@@ -23,7 +23,7 @@ a {
   text-decoration: none;
   color: hsla(30.6, 83.2%, 54.1%, 1);
   transition: 0.4s;
-  padding: 3px;
+
 
   @media (hover: hover) {
     &:hover {

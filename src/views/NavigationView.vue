@@ -14,8 +14,13 @@ const scrollTo = (id: string) => {
     <br />
     <RouterLink to="/layout">Layouts</RouterLink>
     <ul>
-      <li><a href="#padding" @click.prevent="scrollTo('padding')">Padding</a></li>
-      <li><a href="#margin" @click.prevent="scrollTo('margin')">Margin</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Padding')">Padding</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Margin')">Margin</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Flex')">Flex</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Flexbox')">Flexbox</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Grid')">Grid</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Clamp')">Clamp</a></li>
+      <li><a href="#" @click.prevent="scrollTo('@media')">Media query's</a></li>
     </ul>
     <RouterLink to="/units">CSS units</RouterLink>
     <ul>
@@ -63,15 +68,19 @@ nav {
   padding-left: 20px;
   transition: left 0.5s ease-in-out;
   color: var(--color-text);
-  font-size: clamp(0.8rem, 5vw, 1.6rem);
-  li {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    gap: 1rem;
-    font-size: clamp(0.8rem, 5vw, 1rem);
-    opacity: 0.6;
+  font-size: clamp(0.8rem, 5vw, 1.3rem);
+  ul {
+    padding-left: 1rem;
+    li {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      gap: 0.5rem;
+      font-size: clamp(0.8rem, 5vw, 0.8rem);
+      opacity: 0.6;
+    }
   }
+  
   &:hover {
     left: 0;
   }
