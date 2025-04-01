@@ -47,7 +47,6 @@ onUnmounted(() => {
           <strong>{{ title }}</strong
           >: {{ subtitle || contents }}
         </p>
-        <p v-html="description" />
         <slot name="description"></slot>
         <slot name="code"></slot>
         <slot name="quote" class="quote"></slot>
@@ -86,7 +85,7 @@ onUnmounted(() => {
       padding: 1rem 0;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 1.5rem;
       font-size: clamp(1.2rem, 5vw, 1.5rem);
       p {
         margin: 0;
@@ -105,8 +104,6 @@ onUnmounted(() => {
       }
       &:deep(pre) {
         width: clamp(300px, 60vw, 900px);
-        padding: 0 1.5rem;
-        background-color: hsl(0, 0%, 9.4%);
         border-radius: 0.5rem;
         font-size: clamp(0.2rem, 100%, 1rem);
         overflow: hidden;

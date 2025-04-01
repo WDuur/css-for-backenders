@@ -1,8 +1,7 @@
 <template>
   <highlightjs
     language="css"
-    code="
-  .container {
+    code=".container {
     display: flex: /* Activeer Flexbox */
 
     /* Flex Direction */
