@@ -18,6 +18,10 @@ import GridLayout from '@/chapters/layout/gridLayout.vue'
 import GridLayoutCode from '@/chapters/layout/gridLayoutCode.vue'
 import GridNamedLayout from '@/chapters/layout/gridNamedLayout.vue'
 import GridNamedLayoutCode from '@/chapters/layout/gridNamedLayoutCode.vue'
+import MediaQueryLayout from '@/chapters/layout/mediaQueryLayout.vue'
+import MediaQueryLayoutCode from '@/chapters/layout/mediaQueryLayoutCode.vue'
+import ClampLayout from '@/chapters/layout/clampLayout.vue'
+import ClampLayoutCode from '@/chapters/layout/clampLayoutCode.vue'
 
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
 const {} = useChapterNavigation('important', 'units')
@@ -32,6 +36,8 @@ const { scrollTo } = useAnchorNavigation([
   'Flexbox tools',
   'Grid',
   'Named Grid',	
+  'Clamp',
+  '@media',
 ])
 
 onMounted(() => {
@@ -40,7 +46,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="css-layout css-base-element-blocks">
-    <h1 id="title">Belangrijke elementen voor een goede html layout</h1>
+    <h1 id="title">Belangrijke elementen voor een goede responsive layout</h1>
 
     <!----- PaddingLayout -->
     <BaseElementBlock
@@ -120,6 +126,26 @@ onMounted(() => {
     >
       <template #description><GridNamedLayout /></template>
       <template #code><GridNamedLayoutCode /></template>
+    </BaseElementBlock>
+
+    <!----- MediaQueryLayout -->
+    <BaseElementBlock
+      title="Clamp"
+      subtitle="Dynamische grootte met minimale en maximale grenzen!">
+
+      <template #description><ClampLayout /></template>
+      <template #code><ClampLayoutCode /></template>
+
+    </BaseElementBlock>
+
+    <!----- MediaQueryLayout -->
+    <BaseElementBlock
+      title="@media"
+      subtitle="Wat zijn CSS Media Queries?">
+
+      <template #description><MediaQueryLayout /></template>
+      <template #code><MediaQueryLayoutCode /></template>
+
     </BaseElementBlock>
   </div>
 </template>
