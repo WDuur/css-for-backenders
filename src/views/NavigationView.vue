@@ -20,6 +20,7 @@ const scrollTo = (id: string) => {
       <li><a href="#" @click.prevent="scrollTo('Flexbox')">Flexbox</a></li>
       <li><a href="#" @click.prevent="scrollTo('Grid')">Grid</a></li>
       <li><a href="#" @click.prevent="scrollTo('Clamp')">Clamp</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Calc')">Calc</a></li>
       <li><a href="#" @click.prevent="scrollTo('@media')">Media query's</a></li>
     </ul>
     <RouterLink to="/units">CSS units</RouterLink>
@@ -44,6 +45,8 @@ const scrollTo = (id: string) => {
     </ul>
     <RouterLink to="/variables">CSS variabelen</RouterLink>
     <ul>
+      <li><a href="#" @click.prevent="scrollTo('Variabelen')">Variabelen</a></li>
+      <li><a href="#" @click.prevent="scrollTo('SCSS variabelen')">Scss variabelen</a></li>
       <li><a href="#padding" @click.prevent="scrollTo('Tailwind')">Tailwind</a></li>
     </ul>
     <RouterLink to="/preprocessors">CSS preprocessors</RouterLink>
