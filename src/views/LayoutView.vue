@@ -22,6 +22,8 @@ import MediaQueryLayout from '@/chapters/layout/mediaQueryLayout.vue'
 import MediaQueryLayoutCode from '@/chapters/layout/mediaQueryLayoutCode.vue'
 import ClampLayout from '@/chapters/layout/clampLayout.vue'
 import ClampLayoutCode from '@/chapters/layout/clampLayoutCode.vue'
+import CalcLayout from '@/chapters/layout/calcLayout.vue'
+import CalcLayoutCode from '@/chapters/layout/calcLayoutCode.vue'
 
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
 const {} = useChapterNavigation('important', 'units')
@@ -37,6 +39,7 @@ const { scrollTo } = useAnchorNavigation([
   'Grid',
   'Named Grid',	
   'Clamp',
+  'Calc',
   '@media',
 ])
 
@@ -135,6 +138,16 @@ onMounted(() => {
 
       <template #description><ClampLayout /></template>
       <template #code><ClampLayoutCode /></template>
+
+    </BaseElementBlock>
+
+    <!----- MediaQueryLayout -->
+    <BaseElementBlock
+      title="Calc"
+      subtitle="berekent dynamische CSS-waarden">
+
+      <template #description><CalcLayout /></template>
+      <template #code><CalcLayoutCode /></template>
 
     </BaseElementBlock>
 

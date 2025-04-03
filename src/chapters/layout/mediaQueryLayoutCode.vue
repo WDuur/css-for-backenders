@@ -17,8 +17,7 @@
   />
     <highlightjs
     language="css"
-    code="/* Standaard stijl voor grotere schermen */
-.container {
+    code=".container {
   background-color: blue;
   font-size: 20px;
   @media (max-width: 768px) {
