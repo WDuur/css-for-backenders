@@ -20,6 +20,7 @@ import GridNamedLayout from '@/chapters/layout/gridNamedLayout.vue'
 import GridNamedLayoutCode from '@/chapters/layout/gridNamedLayoutCode.vue'
 import MediaQueryLayout from '@/chapters/layout/mediaQueryLayout.vue'
 import MediaQueryLayoutCode from '@/chapters/layout/mediaQueryLayoutCode.vue'
+import MediaQueryLayoutOperatorsCode from '@/chapters/layout/mediaQueryLayoutOperatorsCode.vue'
 import ClampLayout from '@/chapters/layout/clampLayout.vue'
 import ClampLayoutCode from '@/chapters/layout/clampLayoutCode.vue'
 import CalcLayout from '@/chapters/layout/calcLayout.vue'
@@ -158,6 +159,14 @@ onMounted(() => {
 
       <template #description><MediaQueryLayout /></template>
       <template #code><MediaQueryLayoutCode /></template>
+
+    </BaseElementBlock>
+
+       <!----- MediaQueryLayout -->
+    <BaseElementBlock
+      title="@media"
+      subtitle="logical operators">
+      <template #code><MediaQueryLayoutOperatorsCode /></template>
 
     </BaseElementBlock>
   </div>

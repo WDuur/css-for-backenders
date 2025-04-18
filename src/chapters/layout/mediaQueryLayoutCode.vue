@@ -27,4 +27,12 @@
 }
 "
   />
+
+  <highlightjs
+    language="css"
+    code="/* nieuwe media query style */
+@media (400px <= width)   
+@media (50rem <= width <= 70rem)
+"
+  />
 </template>

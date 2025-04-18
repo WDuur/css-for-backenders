@@ -12,7 +12,7 @@ const {} = useChapterNavigation('variables', 'architectuur')
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
   'SCSS',
-  'Less',
+  'LESS',
 ])
 onMounted(() => {
   scrollTo('title')
