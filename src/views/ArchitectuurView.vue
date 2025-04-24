@@ -43,10 +43,9 @@ onMounted(() => {
 
     <BaseElementBlock
       title="SMACSS"
-      subtitle="SMACSS is de afkroting van Scalable and Modular Architecture for CSS. Het is een CSS-architectuur die zich richt op het maken van schaalbare en modulaire CSS-code."
+      subtitle="SMACSS is de afkroting van Scalable and Modular Architecture for CSS. Het is een CSS-architectuur die zich richt op het maken van schaalbare en modulaire CSS-code door onderdelen te spitsen in categorieën."
     >
       <template #description><smacss /></template>
-      <template #code><smacss-code /></template>
     </BaseElementBlock>
   </div>
 </template>
