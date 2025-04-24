@@ -43,6 +43,11 @@ const router = createRouter({
       name: 'debugging',
       component: () => import('../views/DebuggingView.vue'),
     },
+    {
+      path: '/animaties',
+      name: 'animaties',
+      component: () => import('../views/AnimatieView.vue'),
+    },
   ],
 })
 
