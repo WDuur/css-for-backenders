@@ -17,15 +17,11 @@ body {
 
 button {
   background-color: $secondary-color;
-  color: white;
-  border: none;
   padding: $spacing * 1.5;
-  cursor: pointer;
 
   &:hover {
     background-color: darken($secondary-color, 10%);
   }
 }"
   />
-
 </template>

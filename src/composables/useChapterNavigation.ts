@@ -14,6 +14,9 @@ export function useChapterNavigation(prevUrl: string, nextUrl: string) {
     }
   }
 
+  const goNextChapter = (nextChapter: string) => {
+    router.push(`/${nextChapter}`)
+  }
   onMounted(() => {
     window.addEventListener('keydown', handleKeydown)
   })
@@ -22,5 +25,7 @@ export function useChapterNavigation(prevUrl: string, nextUrl: string) {
     window.removeEventListener('keydown', handleKeydown)
   })
 
-  return {}
+  return {
+    goNextChapter,
+  }
 }

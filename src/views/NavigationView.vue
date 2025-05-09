@@ -45,20 +45,20 @@ const scrollTo = (id: string) => {
     </ul>
     <RouterLink to="/variables">CSS variabelen</RouterLink>
     <ul>
-      <li><a href="#" @click.prevent="scrollTo('Variabelen')">Variabelen</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Variablen')">Variabelen</a></li>
       <li><a href="#" @click.prevent="scrollTo('SCSS variabelen')">Scss variabelen</a></li>
-      <li><a href="#padding" @click.prevent="scrollTo('Tailwind')">Tailwind</a></li>
+      <li><a href="#" @click.prevent="scrollTo('Tailwind')">Tailwind</a></li>
     </ul>
     <RouterLink to="/preprocessors">CSS preprocessors</RouterLink>
     <ul>
-      <li><a href="#padding" @click.prevent="scrollTo('SCSS')">SCSS</a></li>
-      <li><a href="#padding" @click.prevent="scrollTo('LESS')">LESS</a></li>
+      <li><a href="#" @click.prevent="scrollTo('SCSS')">SCSS</a></li>
+      <li><a href="#" @click.prevent="scrollTo('LESS')">LESS</a></li>
     </ul>
     <RouterLink to="/architectuur">Architectuur</RouterLink>
     <ul>
-      <li><a href="#padding" @click.prevent="scrollTo('BEM')">BEM</a></li>
-      <li><a href="#padding" @click.prevent="scrollTo('OOCSS')">OOCSS</a></li>
-      <li><a href="#padding" @click.prevent="scrollTo('SMACSS')">SMACSS</a></li>
+      <li><a href="#" @click.prevent="scrollTo('BEM')">BEM</a></li>
+      <li><a href="#" @click.prevent="scrollTo('OOCSS')">OOCSS</a></li>
+      <li><a href="#s" @click.prevent="scrollTo('SMACSS')">SMACSS</a></li>
     </ul>
   </nav>
 </template>
@@ -83,7 +83,7 @@ nav {
       opacity: 0.6;
     }
   }
-  
+
   &:hover {
     left: 0;
   }

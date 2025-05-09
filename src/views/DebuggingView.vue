@@ -4,7 +4,7 @@ import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('variables', '')
+const {} = useChapterNavigation('architectuur', 'animaties')
 
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
