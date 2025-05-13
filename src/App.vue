@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import NavigationView from './views/NavigationView.vue'
+import EndIndication from './components/EndIndication.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import NavigationView from './views/NavigationView.vue'
       <RouterView />
     </div>
   </div>
+  <EndIndication />
 </template>
 
 <style scoped lang="scss">

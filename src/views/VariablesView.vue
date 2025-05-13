@@ -17,12 +17,14 @@ const { scrollTo } = useAnchorNavigation([
   'SCSS variabelen',
   'Tailwind',
   'Waarom Tailwind',
+  'end',
 ])
 onMounted(() => {
   scrollTo('title')
 })
 </script>
 <template>
+  <IndicatorLabel title="CSS Variabelen" />
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">CSS variabelen: maak je css dynamisch en makelijker</h1>
 

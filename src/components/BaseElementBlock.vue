@@ -9,6 +9,7 @@ const props = defineProps<{
   code?: string | null
   quote?: string | null
   linkPens?: string[] | null
+  outside?: boolean
 }>()
 
 const state = ref('closed')
@@ -51,9 +52,20 @@ onUnmounted(() => {
         <slot name="code"></slot>
         <slot name="quote" class="quote"></slot>
         <p v-if="quote" class="quote" v-html="quote" />
-        <span class="demo" v-if="computedLinkPens" @click="openPen()" @keydown.enter="openPen()"
+
+        <span
+          class="demo"
+          v-if="computedLinkPens && !outside"
+          @click="openPen()"
+          @keydown.enter="openPen()"
           >#demo</span
         >
+        <div v-else-if="computedLinkPens && outside">
+          <span v-for="(link, index) in computedLinkPens" :key="index" class="pen"
+            ><a :href="link" target="_blank">pen {{ index + 1 }}</a></span
+          >
+        </div>
+
         <div v-if="state === 'open'">
           <iframe
             v-for="(linkPen, index) in computedLinkPens"
@@ -80,6 +92,7 @@ onUnmounted(() => {
   ul {
     list-style: none;
     padding: 0;
+    padding-top: 8rem;
     font-weight: 300;
     li {
       padding: 1rem 0;

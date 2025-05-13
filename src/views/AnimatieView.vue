@@ -12,34 +12,52 @@ const { scrollTo } = useAnchorNavigation([
   'Card',
   'Kaartenhuis',
   'Maze',
+  'end',
 ])
 onMounted(() => {
   scrollTo('title')
 })
 </script>
 <template>
+  <IndicatorLabel title="CSS Animaties " />
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">CSS animaties</h1>
 
-    <BaseElementBlock title="Ping Pong" :linkPens="['https://codepen.io/amit_sheen/pen/PobQjMX']">
+    <BaseElementBlock
+      title="Ping Pong"
+      :outside="true"
+      :linkPens="['https://codepen.io/amit_sheen/pen/PobQjMX']"
+    >
       <template #description>
         <img src="/images/tennis.png" />
       </template>
     </BaseElementBlock>
 
-    <BaseElementBlock title="Card" :linkPens="['https://codepen.io/ivorjetski/pen/ExaKmjw']">
+    <BaseElementBlock
+      title="Card"
+      :outside="true"
+      :linkPens="['https://codepen.io/ivorjetski/pen/ExaKmjw']"
+    >
       <template #description>
         <img class="portret" src="/images/kaart.png" />
       </template>
     </BaseElementBlock>
 
-    <BaseElementBlock title="Kaartenhuis" :linkPens="['https://codepen.io/amit_sheen/pen/QWGjRKR']">
+    <BaseElementBlock
+      title="Kaartenhuis"
+      :outside="true"
+      :linkPens="['https://codepen.io/amit_sheen/pen/QWGjRKR']"
+    >
       <template #description>
         <img src="/images/kaarthuis.png" />
       </template>
     </BaseElementBlock>
 
-    <BaseElementBlock title="Maze" :linkPens="['https://codepen.io/ivorjetski/pen/poQpveN']">
+    <BaseElementBlock
+      title="Maze"
+      :outside="true"
+      :linkPens="['https://codepen.io/ivorjetski/pen/poQpveN']"
+    >
       <template #description>
         <img src="/images/maze.png" />
       </template>

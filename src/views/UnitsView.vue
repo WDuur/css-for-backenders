@@ -22,12 +22,15 @@ const { scrollTo } = useAnchorNavigation([
   'Viewport-gebaseerde eenheden',
   'Flexibele eenheden',
   'Welke eenheid',
+  'end',
 ])
 onMounted(() => {
   scrollTo('title')
 })
 </script>
 <template>
+  <IndicatorLabel title="CSS units" />
+
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">Begrijp CSS Eenheden: Wanneer gebruik je px, rem, vh en meer?</h1>
     <h2 id="subtitle1">

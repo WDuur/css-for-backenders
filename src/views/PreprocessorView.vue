@@ -13,12 +13,14 @@ const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
   'SCSS',
   'LESS',
+  'end',
 ])
 onMounted(() => {
   scrollTo('title')
 })
 </script>
 <template>
+  <IndicatorLabel title="CSS Preprocessors" />
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">CSS preprocessors</h1>
 

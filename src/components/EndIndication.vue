@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useChapterNavigation } from '@/composables/useChapterNavigation'
 
+defineProps<{ nextChapter: string }>()
+
+const { goNextChapter } = useChapterNavigation()
 const isAnimating = ref(false)
 
 function triggerPulse() {
@@ -9,23 +13,29 @@ function triggerPulse() {
   requestAnimationFrame(() => {
     isAnimating.value = true
   })
+  goNextChapter('units')
 }
 </script>
 
 <template>
-  <div class="next-chapter-wrapper">
-    <button :class="['next-chapter', { pulse: isAnimating }]" @click="triggerPulse"></button>
+  <div id="end" class="end-chapter-wrapper">
+    <button :class="['end-chapter', { pulse: isAnimating }]" @click="triggerPulse">end</button>
   </div>
 </template>
 
 <style scoped lang="scss">
-.next-chapter-wrapper {
-  position: fixed;
-  bottom: 2rem;
-  left: 2rem;
+.end-chapter {
+  &-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  font-size: 2.4rem;
+  color: var(--vt-c-orange);
 }
 
-.next-chapter {
+.end-chapter {
   position: relative;
   margin: auto;
   background-color: transparent;

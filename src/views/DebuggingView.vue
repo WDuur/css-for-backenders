@@ -9,12 +9,14 @@ const {} = useChapterNavigation('architectuur', 'animaties')
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
   'Debuggen',
+  'end',
 ])
 onMounted(() => {
   scrollTo('title')
 })
 </script>
 <template>
+  <IndicatorLabel title="Debuggen" />
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">Oeiii.... CSS debuggen</h1>
 

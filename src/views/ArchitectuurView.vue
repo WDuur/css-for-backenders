@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import BaseElementBlock from '@/components/BaseElementBlock.vue'
-import BaseElementButton from '@/components/BaseElementButton.vue'
+
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
 import Bem from '@/chapters/architectuur/bem.vue'
@@ -17,6 +16,7 @@ onMounted(() => {
 })
 </script>
 <template>
+  <IndicatorLabel title="Architectuur" />
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">
       Hoe kan je je CSS file inrichten om je styling modulair, geincapsuleert en Seperation of
@@ -49,5 +49,4 @@ onMounted(() => {
       <template #description><smacss /></template>
     </BaseElementBlock>
   </div>
-  <BaseElementButton nextChapter="debugging" />
 </template>

@@ -3,13 +3,16 @@ import { useRouter } from 'vue-router'
 
 export function useChapterNavigation(prevUrl: string, nextUrl: string) {
   const router = useRouter()
+
+  console.log('url', prevUrl, nextUrl)
   const handleKeydown = (event: KeyboardEvent) => {
     if (router) {
       if (event.key === 'ArrowLeft') {
         router.push(`/${prevUrl}`)
       }
       if (event.key === 'ArrowRight') {
-        router.push(`/${nextUrl}`)
+        console.log('nextUrl', nextUrl)
+        //router.push(`/${nextUrl}`)
       }
     }
   }

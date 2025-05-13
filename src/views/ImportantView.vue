@@ -8,6 +8,7 @@ import { useChapterNavigation } from '@/composables/useChapterNavigation'
 const { scrollTo } = useAnchorNavigation([
   'title', // title do not remove
   'important',
+  'end',
 ])
 onMounted(() => {
   scrollTo('title')

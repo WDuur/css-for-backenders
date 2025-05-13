@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
+import { useChapterNavigation } from '@/composables/useChapterNavigation'
 
 import PaddingLayout from '@/chapters/layout/paddingLayout.vue'
 import PaddingLayoutCode from '@/chapters/layout/paddingLayoutCode.vue'
@@ -25,11 +25,11 @@ import ClampLayout from '@/chapters/layout/clampLayout.vue'
 import ClampLayoutCode from '@/chapters/layout/clampLayoutCode.vue'
 import CalcLayout from '@/chapters/layout/calcLayout.vue'
 import CalcLayoutCode from '@/chapters/layout/calcLayoutCode.vue'
+import BaseElementButton from '@/components/BaseElementButton.vue'
 
-import { useChapterNavigation } from '@/composables/useChapterNavigation'
 const {} = useChapterNavigation('important', 'units')
 
-const { scrollTo } = useAnchorNavigation([
+const anchorList = [
   'title',
   'Padding',
   'Margin',
@@ -38,17 +38,21 @@ const { scrollTo } = useAnchorNavigation([
   'Flexbox opties',
   'Flexbox tools',
   'Grid',
-  'Named Grid',	
+  'Named Grid',
   'Clamp',
   'Calc',
   '@media',
-])
+  'end',
+]
+const { scrollTo, handleClick } = useAnchorNavigation(anchorList)
 
 onMounted(() => {
   scrollTo('title')
 })
 </script>
 <template>
+  <IndicatorLabel title="Layouts" />
+
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">Belangrijke elementen voor een goede responsive layout</h1>
 
@@ -79,9 +83,7 @@ onMounted(() => {
     </BaseElementBlock>
 
     <!----- FlexLayout -->
-    <BaseElementBlock
-      title="Flex"
-      subtitle="Maak moeiteloos flexibele en responsieve lay-outs!">
+    <BaseElementBlock title="Flex" subtitle="Maak moeiteloos flexibele en responsieve lay-outs!">
       <template #description><FlexLayout /></template>
       <template #code><FlexLayoutCode /></template>
     </BaseElementBlock>
@@ -97,7 +99,7 @@ onMounted(() => {
       <template #description><FlexBoxLayout /></template>
       <template #code><FlexBoxLayoutCode /></template>
     </BaseElementBlock>
-  
+
     <!----- FlexLayout options -->
     <BaseElementBlock title="Flexbox opties">
       <template #code><FlexBoxOptionsLayoutCode /></template>
@@ -133,49 +135,27 @@ onMounted(() => {
     </BaseElementBlock>
 
     <!----- MediaQueryLayout -->
-    <BaseElementBlock
-      title="Clamp"
-      subtitle="Dynamische grootte met minimale en maximale grenzen!">
-
+    <BaseElementBlock title="Clamp" subtitle="Dynamische grootte met minimale en maximale grenzen!">
       <template #description><ClampLayout /></template>
       <template #code><ClampLayoutCode /></template>
-
     </BaseElementBlock>
 
     <!----- MediaQueryLayout -->
-    <BaseElementBlock
-      title="Calc"
-      subtitle="berekent dynamische CSS-waarden">
-
+    <BaseElementBlock title="Calc" subtitle="berekent dynamische CSS-waarden">
       <template #description><CalcLayout /></template>
       <template #code><CalcLayoutCode /></template>
-
     </BaseElementBlock>
 
     <!----- MediaQueryLayout -->
-    <BaseElementBlock
-      title="@media"
-      subtitle="Wat zijn CSS Media Queries?">
-
+    <BaseElementBlock title="@media" subtitle="Wat zijn CSS Media Queries?">
       <template #description><MediaQueryLayout /></template>
       <template #code><MediaQueryLayoutCode /></template>
-
     </BaseElementBlock>
 
-       <!----- MediaQueryLayout -->
-    <BaseElementBlock
-      title="@media"
-      subtitle="logical operators">
+    <!----- MediaQueryLayout -->
+    <BaseElementBlock title="@media" subtitle="logical operators">
       <template #code><MediaQueryLayoutOperatorsCode /></template>
-
     </BaseElementBlock>
   </div>
+  <BaseElementButton @click="handleClick" />
 </template>
-
-<style lang="scss" scoped>
-h1 {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-</style>
