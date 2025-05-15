@@ -2,13 +2,14 @@
 import { onMounted } from 'vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('', 'important')
 
-const { scrollTo } = useAnchorNavigation([
-  'title', // title do not remove
-  'important',
-])
+const chapterRoute = ['', 'important']
+const anchorRoute = ['title', 'end']
+const { setRoute } = useChapterNavigation()
+const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
+
 onMounted(() => {
+  setRoute(chapterRoute)
   scrollTo('title')
 })
 </script>
@@ -16,6 +17,7 @@ onMounted(() => {
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">CSS FOR BACKENDERS <sub>- powerd by Pieter & Wietze -</sub></h1>
   </div>
+  <BaseElementButton @click="handleClick" />
 </template>
 
 <style scoped lang="scss">

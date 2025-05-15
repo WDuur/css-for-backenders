@@ -1,24 +1,32 @@
-import { onMounted, onUnmounted } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+const prevRoute = ref('')
+const nextRoute = ref('')
 
-export function useChapterNavigation(prevUrl: string, nextUrl: string) {
+export function useChapterNavigation() {
   const router = useRouter()
 
-  console.log('url', prevUrl, nextUrl)
   const handleKeydown = (event: KeyboardEvent) => {
     if (router) {
       if (event.key === 'ArrowLeft') {
-        router.push(`/${prevUrl}`)
+        router.push(`/${prevRoute.value}`)
       }
       if (event.key === 'ArrowRight') {
-        console.log('nextUrl', nextUrl)
-        //router.push(`/${nextUrl}`)
+        router.push(`/${nextRoute.value}`)
       }
     }
   }
 
-  const goNextChapter = (nextChapter: string) => {
-    router.push(`/${nextChapter}`)
+  const setRoute = (route: string[]) => {
+    prevRoute.value = route[0]
+    nextRoute.value = route[1]
+  }
+
+  const goNextChapter = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    nextTick(() => {
+      router.push(`/${nextRoute.value}`)
+    })
   }
   onMounted(() => {
     window.addEventListener('keydown', handleKeydown)
@@ -29,6 +37,7 @@ export function useChapterNavigation(prevUrl: string, nextUrl: string) {
   })
 
   return {
+    setRoute,
     goNextChapter,
   }
 }

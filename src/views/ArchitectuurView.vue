@@ -1,17 +1,21 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
+//content
 import Bem from '@/chapters/architectuur/bem.vue'
 import Oocss from '@/chapters/architectuur/oocss.vue'
 import Smacss from '@/chapters/architectuur/smacss.vue'
 import BemCode from '@/chapters/architectuur/bemCode.vue'
 import OocssCode from '@/chapters/architectuur/oocssCode.vue'
 
-const {} = useChapterNavigation('preprocessors', 'debugging')
-const { scrollTo } = useAnchorNavigation(['title', 'subtitle1', 'BEM', 'OOCSS', 'SMACSS', 'end'])
+const chapterRoute = ['preprocessors', 'debugging']
+const anchorRoute = ['title', 'subtitle1', 'BEM', 'OOCSS', 'SMACSS', 'end']
+const { setRoute } = useChapterNavigation()
+const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
+
 onMounted(() => {
+  setRoute(chapterRoute)
   scrollTo('title')
 })
 </script>
@@ -49,4 +53,5 @@ onMounted(() => {
       <template #description><smacss /></template>
     </BaseElementBlock>
   </div>
+  <BaseElementButton @click="handleClick" />
 </template>

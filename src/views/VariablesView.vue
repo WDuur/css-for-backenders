@@ -1,25 +1,21 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
+// content
 import CustomVariables from '@/chapters/variables/customVariables.vue'
 import CustomVariablesCode from '@/chapters/variables/customVariablesCode.vue'
 import ScssVariablesCode from '@/chapters/variables/scssVariablesCode.vue'
 import tailwindVariables from '@/chapters/variables/tailwindVariables.vue'
 import tailwindProsVariables from '@/chapters/variables/tailwindProsVariables.vue'
 
-const {} = useChapterNavigation('units', 'preprocessors')
+const chapterRoute = ['units', 'preprocessors']
+const anchorRoute = ['title', 'Variablen', 'SCSS variabelen', 'Tailwind', 'Waarom Tailwind', 'end']
+const { setRoute } = useChapterNavigation()
+const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
 
-const { scrollTo } = useAnchorNavigation([
-  'title', // title do not remove
-  'Variablen',
-  'SCSS variabelen',
-  'Tailwind',
-  'Waarom Tailwind',
-  'end',
-])
 onMounted(() => {
+  setRoute(chapterRoute)
   scrollTo('title')
 })
 </script>
@@ -51,4 +47,5 @@ onMounted(() => {
       <template #description><tailwindProsVariables /></template>
     </BaseElementBlock>
   </div>
+  <BaseElementButton @click="handleClick" />
 </template>

@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
-
+//content
 import PaddingLayout from '@/chapters/layout/paddingLayout.vue'
 import PaddingLayoutCode from '@/chapters/layout/paddingLayoutCode.vue'
 import MarginLayout from '@/chapters/layout/marginLayout.vue'
@@ -27,9 +27,8 @@ import CalcLayout from '@/chapters/layout/calcLayout.vue'
 import CalcLayoutCode from '@/chapters/layout/calcLayoutCode.vue'
 import BaseElementButton from '@/components/BaseElementButton.vue'
 
-const {} = useChapterNavigation('important', 'units')
-
-const anchorList = [
+const chapterRoute = ['important', 'units']
+const anchorRoute = [
   'title',
   'Padding',
   'Margin',
@@ -44,9 +43,11 @@ const anchorList = [
   '@media',
   'end',
 ]
-const { scrollTo, handleClick } = useAnchorNavigation(anchorList)
+const { setRoute } = useChapterNavigation()
+const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
 
 onMounted(() => {
+  setRoute(chapterRoute)
   scrollTo('title')
 })
 </script>

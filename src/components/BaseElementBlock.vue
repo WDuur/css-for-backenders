@@ -62,7 +62,7 @@ onUnmounted(() => {
         >
         <div v-else-if="computedLinkPens && outside">
           <span v-for="(link, index) in computedLinkPens" :key="index" class="pen"
-            ><a :href="link" target="_blank">pen {{ index + 1 }}</a></span
+            ><a :href="link" target="_blank"> {{ title }} Demo </a></span
           >
         </div>
 

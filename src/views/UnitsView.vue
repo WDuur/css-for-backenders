@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
-
+import { useChapterNavigation } from '@/composables/useChapterNavigation'
+// content
 import PxUnits from '@/chapters/units/pxUnits.vue'
 import PxUnitsQuote from '@/chapters/units/pxUnitsQuote.vue'
 import PxUnitsCode from '@/chapters/units/pxUnitsCode.vue'
@@ -10,10 +10,9 @@ import TextUnits from '@/chapters/units/textUnits.vue'
 import ViewportUnits from '@/chapters/units/viewportUnits.vue'
 import FlexUnits from '@/chapters/units/flexUnits.vue'
 import WitchUnits from '@/chapters/units/witchUnits.vue'
-import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('layout', 'variables')
 
-const { scrollTo } = useAnchorNavigation([
+const chapterRoute = ['layout', 'variables']
+const anchorRoute = [
   'title',
   'subtitle1',
   'px',
@@ -23,8 +22,12 @@ const { scrollTo } = useAnchorNavigation([
   'Flexibele eenheden',
   'Welke eenheid',
   'end',
-])
+]
+const { setRoute } = useChapterNavigation()
+const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
+
 onMounted(() => {
+  setRoute(chapterRoute)
   scrollTo('title')
 })
 </script>
@@ -77,4 +80,5 @@ onMounted(() => {
       <template #description><WitchUnits /></template>
     </BaseElementBlock>
   </div>
+  <BaseElementButton @click="handleClick" />
 </template>

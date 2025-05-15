@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
 
-defineProps<{ nextChapter: string }>()
+defineProps<{ nextChapter?: string }>()
 
 const { goNextChapter } = useChapterNavigation()
 const isAnimating = ref(false)
@@ -13,7 +13,7 @@ function triggerPulse() {
   requestAnimationFrame(() => {
     isAnimating.value = true
   })
-  goNextChapter('units')
+  goNextChapter()
 }
 </script>
 

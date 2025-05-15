@@ -1,21 +1,24 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
+import { useChapterNavigation } from '@/composables/useChapterNavigation'
 
 import ScssPreprocessors from '@/chapters/preprocessors/scssPreprocessors.vue'
 import ScssPreprocessorsCode from '@/chapters/preprocessors/scssPreprocessorsCode.vue'
 import ScssPreprocessorsQuote from '@/chapters/preprocessors/scssPreprocessorsQuote.vue'
-import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('variables', 'architectuur')
 
-const { scrollTo } = useAnchorNavigation([
+const chapterRoute = ['variables', 'architectuur']
+const anchorRoute = [
   'title', // title do not remove
   'SCSS',
   'LESS',
   'end',
-])
+]
+const { setRoute } = useChapterNavigation()
+const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
+
 onMounted(() => {
+  setRoute(chapterRoute)
   scrollTo('title')
 })
 </script>
@@ -41,4 +44,5 @@ onMounted(() => {
     >
     </BaseElementBlock>
   </div>
+  <BaseElementButton @click="handleClick" />
 </template>

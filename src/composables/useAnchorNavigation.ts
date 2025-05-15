@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 export function useAnchorNavigation(initialAnchors: string[]) {
   const currentAnchor = ref<string>('')
   const anchors = ref<string[]>(initialAnchors)
-  console.log(anchors.value)
+
   let currentAnchorIndex = 0
 
   const scrollTo = (id: string) => {

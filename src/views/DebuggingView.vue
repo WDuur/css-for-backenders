@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import BaseElementBlock from '@/components/BaseElementBlock.vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
-
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
-const {} = useChapterNavigation('architectuur', 'animaties')
 
-const { scrollTo } = useAnchorNavigation([
-  'title', // title do not remove
-  'Debuggen',
-  'end',
-])
+const chapterRoute = ['architectuur', 'animaties']
+const anchorRoute = ['title', 'Debuggen', 'end']
+const { setRoute } = useChapterNavigation()
+const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
+
 onMounted(() => {
+  setRoute(chapterRoute)
   scrollTo('title')
 })
 </script>
@@ -23,4 +21,5 @@ onMounted(() => {
     <!----- SCSS -->
     <BaseElementBlock title="Debuggen" subtitle=""> </BaseElementBlock>
   </div>
+  <BaseElementButton @click="handleClick" />
 </template>
