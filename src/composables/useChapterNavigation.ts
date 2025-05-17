@@ -23,7 +23,7 @@ export function useChapterNavigation() {
   }
 
   const goNextChapter = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0 })
     nextTick(() => {
       router.push(`/${nextRoute.value}`)
     })

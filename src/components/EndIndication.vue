@@ -19,7 +19,7 @@ function triggerPulse() {
 
 <template>
   <div id="end" class="end-chapter-wrapper">
-    <button :class="['end-chapter', { pulse: isAnimating }]" @click="triggerPulse">end</button>
+    <button :class="['end-chapter', { pulse: isAnimating }]" @click="triggerPulse">NEXT</button>
   </div>
 </template>
 
