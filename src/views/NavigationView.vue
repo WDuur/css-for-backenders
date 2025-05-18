@@ -60,6 +60,8 @@ const scrollTo = (id: string) => {
       <li><a href="#" @click.prevent="scrollTo('OOCSS')">OOCSS</a></li>
       <li><a href="#s" @click.prevent="scrollTo('SMACSS')">SMACSS</a></li>
     </ul>
+    <RouterLink to="/debugging">CSS debuggen</RouterLink><br />
+    <RouterLink to="/animaties">Animaties</RouterLink>
   </nav>
 </template>
 
