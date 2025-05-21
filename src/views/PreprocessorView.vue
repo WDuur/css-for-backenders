@@ -7,11 +7,19 @@ import ScssPreprocessors from '@/chapters/preprocessors/scssPreprocessors.vue'
 import ScssPreprocessorsCode from '@/chapters/preprocessors/scssPreprocessorsCode.vue'
 import ScssPreprocessorsQuote from '@/chapters/preprocessors/scssPreprocessorsQuote.vue'
 
+import ScssTipPreprocessors from '@/chapters/preprocessors/scssTipPreprocessors.vue'
+import ScssTipPreprocessorsCode from '@/chapters/preprocessors/scssTipPreprocessorsCode.vue'
+import LessPreprocessors from '@/chapters/preprocessors/lessPreprocessors.vue'
+import postCssPreprocessors from '@/chapters/preprocessors/postCssPreprocessors.vue'
+import postCssPreprocessorsCode from '@/chapters/preprocessors/postCssPreprocessorsCode.vue'
+
 const chapterRoute = ['variables', 'architectuur']
 const anchorRoute = [
   'title', // title do not remove
   'SCSS',
+  'SCSS tip',
   'LESS',
+  'PostCSS',
   'end',
 ]
 const { setRoute } = useChapterNavigation()
@@ -36,12 +44,27 @@ onMounted(() => {
       <template #quote><ScssPreprocessorsCode /></template>
       <template #code><ScssPreprocessorsQuote /></template>
     </BaseElementBlock>
+    <!----- SCSS -->
+    <BaseElementBlock title="SCSS tip" subtitle="huidige selector">
+      <template #description><ScssTipPreprocessors /></template>
+      <template #code><ScssTipPreprocessorsCode /></template>
+    </BaseElementBlock>
 
     <!----- LESS -->
     <BaseElementBlock
       title="LESS"
       subtitle="Een CSS-preprocessor met variabelen en functies voor herbruikbare en dynamische stijlen."
     >
+      <template #description><LessPreprocessors /></template>
+    </BaseElementBlock>
+
+    <!----- postCss -->
+    <BaseElementBlock
+      title="PostCSS"
+      subtitle="Een CSS-preprocessor met variabelen en functies voor herbruikbare en dynamische stijlen."
+    >
+      <template #description><postCssPreprocessors /></template>
+      <template #code><postCssPreprocessorsCode /></template>
     </BaseElementBlock>
   </div>
   <BaseElementButton @click="handleClick" />

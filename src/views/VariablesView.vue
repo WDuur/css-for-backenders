@@ -8,9 +8,19 @@ import CustomVariablesCode from '@/chapters/variables/customVariablesCode.vue'
 import ScssVariablesCode from '@/chapters/variables/scssVariablesCode.vue'
 import tailwindVariables from '@/chapters/variables/tailwindVariables.vue'
 import tailwindProsVariables from '@/chapters/variables/tailwindProsVariables.vue'
+import PurgeCss from '@/chapters/variables/purgeCss.vue'
+import PurgeCssCode from '@/chapters/variables/purgeCssCode.vue'
 
 const chapterRoute = ['units', 'preprocessors']
-const anchorRoute = ['title', 'Variablen', 'SCSS variabelen', 'Tailwind', 'Waarom Tailwind', 'end']
+const anchorRoute = [
+  'title',
+  'Variablen',
+  'SCSS variabelen',
+  'Tailwind',
+  'Waarom Tailwind',
+  'purgeCSS',
+  'end',
+]
 const { setRoute } = useChapterNavigation()
 const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
 
@@ -46,6 +56,16 @@ onMounted(() => {
     <BaseElementBlock title="Waarom Tailwind" subtitle="de Voor- en nadelen">
       <template #description><tailwindProsVariables /></template>
     </BaseElementBlock>
+
+    <!----- purgeCSS -->
+    <BaseElementBlock
+      title="purgeCSS"
+      subtitle="een tool die ongebruikte CSS uit je stylesheets verwijdert."
+    >
+      <template #description><PurgeCss /></template>
+      <template #code><PurgeCssCode /></template>
+    </BaseElementBlock>
   </div>
   <BaseElementButton @click="handleClick" />
 </template>
+s
