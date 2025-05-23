@@ -4,7 +4,7 @@ import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
 
 const chapterRoute = ['variables', '']
-const anchorRoute = ['title', 'Ping Pong', 'Card', 'Kaartenhuis', 'Maze', 'end']
+const anchorRoute = ['title', 'Ping Pong', 'Card', 'Kaartenhuis', 'Maze', 'kaart', 'end']
 const { setRoute } = useChapterNavigation()
 const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
 
@@ -67,7 +67,6 @@ onMounted(() => {
         <img src="/images/visitekaart.png" />
       </template>
     </BaseElementBlock>
-
   </div>
   <BaseElementButton @click="handleClick" />
 </template>
