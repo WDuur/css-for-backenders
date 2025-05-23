@@ -57,6 +57,17 @@ onMounted(() => {
         <img src="/images/maze.png" />
       </template>
     </BaseElementBlock>
+
+    <BaseElementBlock
+      title="Kaart"
+      :outside="true"
+      :linkPens="['https://codepen.io/pieter19998/pen/VYYxzgm']"
+    >
+      <template #description>
+        <img src="/images/visitekaart.png" />
+      </template>
+    </BaseElementBlock>
+
   </div>
   <BaseElementButton @click="handleClick" />
 </template>
