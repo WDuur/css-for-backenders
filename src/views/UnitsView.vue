@@ -81,4 +81,5 @@ onMounted(() => {
     </BaseElementBlock>
   </div>
   <BaseElementButton @click="handleClick" />
+  <BaseElementButton position="right" @click="handleClick" />
 </template>

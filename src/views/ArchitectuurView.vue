@@ -8,9 +8,26 @@ import Oocss from '@/chapters/architectuur/oocss.vue'
 import Smacss from '@/chapters/architectuur/smacss.vue'
 import BemCode from '@/chapters/architectuur/bemCode.vue'
 import OocssCode from '@/chapters/architectuur/oocssCode.vue'
+import SmacssBase from '@/chapters/architectuur/smacss-base.vue'
+import SmacssLayout from '@/chapters/architectuur/smacss-layout.vue'
+import SmacssModule from '@/chapters/architectuur/smacss-module.vue'
+import SmacssState from '@/chapters/architectuur/smacss-state.vue'
+import SmacssTheme from '@/chapters/architectuur/smacss-theme.vue'
 
 const chapterRoute = ['preprocessors', 'debugging']
-const anchorRoute = ['title', 'subtitle1', 'BEM', 'OOCSS', 'SMACSS', 'end']
+const anchorRoute = [
+  'title',
+  'subtitle1',
+  'BEM',
+  'OOCSS',
+  'SMACSS',
+  'SMACSS base',
+  'SMACSS layout',
+  'SMACSS module',
+  'SMACSS state',
+  'SMACSS theme',
+  'end',
+]
 const { setRoute } = useChapterNavigation()
 const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
 
@@ -52,6 +69,22 @@ onMounted(() => {
     >
       <template #description><smacss /></template>
     </BaseElementBlock>
+    <BaseElementBlock title="SMACSS base" subtitle="">
+      <template #description><SmacssBase /></template>
+    </BaseElementBlock>
+    <BaseElementBlock title="SMACSS layout" subtitle="">
+      <template #description><SmacssLayout /></template>
+    </BaseElementBlock>
+    <BaseElementBlock title="SMACSS module" subtitle="">
+      <template #description><SmacssModule /></template>
+    </BaseElementBlock>
+    <BaseElementBlock title="SMACSS state" subtitle="">
+      <template #description><SmacssState /></template>
+    </BaseElementBlock>
+    <BaseElementBlock title="SMACSS theme" subtitle="">
+      <template #description><SmacssTheme /></template>
+    </BaseElementBlock>
   </div>
   <BaseElementButton @click="handleClick" />
+  <BaseElementButton position="right" @click="handleClick" />
 </template>

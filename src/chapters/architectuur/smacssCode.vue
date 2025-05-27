@@ -2,12 +2,6 @@
   <highlightjs
     language="css"
     code="
-body {
-  font-family: Arial, sans-serif;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
 
 /* Layout (pagina-indeling) */
 .l-container {
@@ -17,24 +11,15 @@ body {
 
 .l-header, .l-footer {
     background-color: #f8f8f8;
-    padding: 20px;
-    text-align: center;
 }
 
 /* Module (herbruikbare componenten) */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
     background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
 .card {
     border: 1px solid #ddd;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* State (statusspecifieke stijlen) */
