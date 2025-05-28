@@ -3,8 +3,8 @@ import { onMounted } from 'vue'
 import { useAnchorNavigation } from '@/composables/useAnchorNavigation'
 import { useChapterNavigation } from '@/composables/useChapterNavigation'
 
-const chapterRoute = ['variables', '']
-const anchorRoute = ['title', 'Ping Pong', 'Card', 'Kaartenhuis', 'Maze', 'kaart', 'end']
+const chapterRoute = ['variables', 'opdracht']
+const anchorRoute = ['title', 'Ping Pong', 'Card', 'Kaartenhuis', 'Maze', 'Kaart', 'end']
 const { setRoute } = useChapterNavigation()
 const { scrollTo, handleClick } = useAnchorNavigation(anchorRoute)
 
@@ -69,6 +69,7 @@ onMounted(() => {
     </BaseElementBlock>
   </div>
   <BaseElementButton @click="handleClick" />
+  <BaseElementButton position="right" @click="handleClick" />
 </template>
 
 <style scoped lang="scss">

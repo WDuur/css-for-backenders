@@ -18,6 +18,7 @@ onMounted(() => {
     <h1 id="title">CSS FOR BACKENDERS <sub>- powerd by Pieter & Wietze -</sub></h1>
   </div>
   <BaseElementButton @click="handleClick" />
+  <BaseElementButton position="right" @click="handleClick" />
 </template>
 
 <style scoped lang="scss">

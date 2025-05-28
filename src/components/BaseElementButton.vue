@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 const isAnimating = ref(false)
 
+defineProps<{ position?: string }>()
 function triggerPulse() {
   isAnimating.value = false
 
@@ -13,7 +14,7 @@ function triggerPulse() {
 </script>
 
 <template>
-  <div class="next-chapter-wrapper">
+  <div :class="['next-chapter-wrapper', { 'next-chapter-wrapper--right': position === 'right' }]">
     <button :class="['next-chapter', { pulse: isAnimating }]" @click="triggerPulse"></button>
   </div>
 </template>
@@ -23,6 +24,11 @@ function triggerPulse() {
   position: fixed;
   bottom: 2rem;
   left: 2rem;
+
+  &--right {
+    left: unset;
+    right: 2rem;
+  }
 }
 
 .next-chapter {

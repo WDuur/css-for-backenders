@@ -48,6 +48,11 @@ const router = createRouter({
       name: 'animaties',
       component: () => import('../views/AnimatieView.vue'),
     },
+    {
+      path: '/opdracht',
+      name: 'opdracht',
+      component: () => import('../views/OpdrachtView.vue'),
+    },
   ],
 })
 
