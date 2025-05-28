@@ -40,8 +40,7 @@ onMounted(() => {
   <IndicatorLabel title="Architectuur" />
   <div class="css-layout css-base-element-blocks">
     <h1 id="title">
-      Hoe kan je je CSS file inrichten om je styling modulair, geincapsuleert en Seperation of
-      concerns
+      Hoe kan je je CSS file inrichten om je styling conistent, schaalbaar en onderhoudbaar te maken?
     </h1>
     <h2 id="subtitle1">
       <p>Voor CSS zijn er 3 bekende architecturen waarvan gebruik gemaakt kan worden:</p>
