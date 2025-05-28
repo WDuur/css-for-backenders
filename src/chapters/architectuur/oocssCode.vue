@@ -2,42 +2,38 @@
   <highlightjs
     language="css"
     code="
-.card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #fff;
-}
+.media {
+  display: block;
+  margin-bottom: 1rem;
+    }
 
-.card__title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
+    .media img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.card__description {
-  font-size: 16px;
-  color: #666;
-}
+    .content {
+      padding: 1rem;
+    }
 
-/* Element styles */
-.card__button {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 4px;
-}
-/* Modifier styles */
-.card__button--primary {
-  background-color: blue;
-  color: white;
-}
+    .title {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem;
+    }
 
-.card__button--secondary {
-  background-color: gray;
-  color: white;
-}"
+    .description {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 300px;
+    }"
   />
 </template>
 <script setup lang="ts"></script>
