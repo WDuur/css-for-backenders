@@ -11,7 +11,7 @@
       <strong>fr</strong> (fraction) – Verdelingseenheid in CSS Grid.
       <ul>
         <li>
-          Voorbeeld: s<code>grid-template-columns: 1fr 2fr;</code> betekent dat de tweede kolom
+          Voorbeeld: <code>grid-template-columns: 1fr 2fr;</code> betekent dat de tweede kolom
           dubbel zo groot is als de eerste.
         </li>
       </ul>
